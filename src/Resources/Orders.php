@@ -96,7 +96,7 @@ class Orders extends Resource
      * OrderLine, ShippingMethod, OrderStatus, ...).
      *
      * @param  array<string, mixed>  $order
-     * @return array<string, mixed>  The record Neto returns for the new order, including its OrderID
+     * @return array<string, mixed> The record Neto returns for the new order, including its OrderID
      */
     public function create(array $order): array
     {
