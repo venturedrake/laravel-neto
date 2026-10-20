@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\ServiceProvider;
 use VentureDrake\Neto\Exceptions\ConfigurationException;
 use VentureDrake\Neto\Facades\Neto as NetoFacade;
 use VentureDrake\Neto\Neto;
+use VentureDrake\Neto\NetoServiceProvider;
 use VentureDrake\Neto\Resources\Orders;
 use VentureDrake\Neto\Tests\TestCase;
 
@@ -55,14 +56,14 @@ it('fails clearly when the api url is blank', function () {
         ->toThrow(ConfigurationException::class, '"api_url" has not been configured');
 });
 
-it('publishes the config file', function () {
-    $target = config_path('neto.php');
+it('registers the config file for publishing', function () {
+    $source = realpath(__DIR__.'/../../config/neto.php');
 
-    File::delete($target);
+    foreach (['laravel-neto-config', 'laravel-neto'] as $tag) {
+        $paths = ServiceProvider::pathsToPublish(NetoServiceProvider::class, $tag);
 
-    $this->artisan('vendor:publish', ['--tag' => 'laravel-neto-config'])->assertSuccessful();
-
-    expect(File::exists($target))->toBeTrue();
-
-    File::delete($target);
+        expect($paths)->toHaveCount(1)
+            ->and(realpath((string) array_key_first($paths)))->toBe($source)
+            ->and($paths[array_key_first($paths)])->toBe(config_path('neto.php'));
+    }
 });
