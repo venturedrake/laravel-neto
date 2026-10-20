@@ -1,9 +1,9 @@
 # Release Notes
 
-## [Unreleased](https://github.com/venturedrake/laravel-neto/compare/v0.1.0...1.x)
+## [Unreleased](https://github.com/venturedrake/laravel-neto/compare/v0.1.0...main)
 
 
-## [v0.1.0](https://github.com/venturedrake/laravel-neto/compare/...v0.1.0) - 202x-xx-xx
+## [v0.1.0](https://github.com/venturedrake/laravel-neto/compare/...v0.1.0) - 2026-10-20
 
 Initial pre-release.
 
