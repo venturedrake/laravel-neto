@@ -14,21 +14,21 @@ use VentureDrake\Neto\Neto;
  */
 class Orders extends Resource
 {
-    public const KEY = 'Order';
+    public const string KEY = 'Order';
 
     /**
      * Output selectors used when a status check is all that is needed.
      *
      * @var list<string>
      */
-    public const STATUS_SELECTORS = ['OrderID', 'OrderStatus', 'DatePlaced', 'DateUpdated'];
+    public const array STATUS_SELECTORS = ['OrderID', 'OrderStatus', 'DatePlaced', 'DateUpdated'];
 
     /**
      * Output selectors used when retrieving tracking details.
      *
      * @var list<string>
      */
-    public const TRACKING_SELECTORS = [
+    public const array TRACKING_SELECTORS = [
         'OrderID',
         'OrderStatus',
         'DatePlaced',

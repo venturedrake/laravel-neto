@@ -13,14 +13,14 @@ use VentureDrake\Neto\Exceptions\NotFoundException;
  */
 class Items extends Resource
 {
-    public const KEY = 'Item';
+    public const string KEY = 'Item';
 
     /**
      * Output selectors returned when none are given.
      *
      * @var list<string>
      */
-    public const DEFAULT_SELECTORS = [
+    public const array DEFAULT_SELECTORS = [
         'ID',
         'SKU',
         'Name',

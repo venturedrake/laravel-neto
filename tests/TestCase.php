@@ -11,11 +11,11 @@ use VentureDrake\Neto\NetoServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
-    public const API_URL = 'https://example.neto.com.au/do/WS/NetoAPI';
+    public const string API_URL = 'https://example.neto.com.au/do/WS/NetoAPI';
 
-    public const API_KEY = 'test-api-key-0123456789';
+    public const string API_KEY = 'test-api-key-0123456789';
 
-    public const API_USERNAME = 'APIUser';
+    public const string API_USERNAME = 'APIUser';
 
     protected function getPackageProviders($app): array
     {

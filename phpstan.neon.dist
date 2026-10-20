@@ -4,3 +4,7 @@ parameters:
         - src
         - config
     tmpDir: build/phpstan
+    ignoreErrors:
+        -
+            message: '#^Called .env. outside of the config directory#'
+            path: config/*

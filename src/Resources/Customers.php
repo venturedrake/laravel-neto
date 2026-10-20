@@ -13,14 +13,14 @@ use VentureDrake\Neto\Exceptions\NotFoundException;
  */
 class Customers extends Resource
 {
-    public const KEY = 'Customer';
+    public const string KEY = 'Customer';
 
     /**
      * Output selectors returned when none are given.
      *
      * @var list<string>
      */
-    public const DEFAULT_SELECTORS = [
+    public const array DEFAULT_SELECTORS = [
         'ID',
         'Username',
         'EmailAddress',
